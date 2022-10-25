@@ -1,25 +1,38 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import SnackbarProvider from "react-simple-snackbar";
+import { getDefaultWallets, RainbowKitProvider } from "@rainbow-me/rainbowkit";
+import { chain, configureChains, createClient, WagmiConfig } from "wagmi";
+import { alchemyProvider } from "wagmi/providers/alchemy";
+import { publicProvider } from "wagmi/providers/public";
 
-function App() {
+import Home from "./components/home";
+
+import "@rainbow-me/rainbowkit/styles.css";
+
+const { chains, provider } = configureChains(
+  [chain.goerli],
+  [alchemyProvider({ apiKey: process.env.REACT_APP_API_KEY }), publicProvider()]
+);
+
+const { connectors } = getDefaultWallets({
+  appName: "TestToken mint page",
+  chains,
+});
+
+const wagmiClient = createClient({
+  autoConnect: false,
+  connectors,
+  provider,
+});
+
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <WagmiConfig client={wagmiClient}>
+      <RainbowKitProvider chains={chains}>
+        <SnackbarProvider>
+          <Home />
+        </SnackbarProvider>
+      </RainbowKitProvider>
+    </WagmiConfig>
   );
 }
-
-export default App;
