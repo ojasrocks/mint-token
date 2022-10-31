@@ -1,26 +1,16 @@
 # Add3 mintToken test
 
-The package has been structured moving the original files for frontend in folder `/client` , and set the backend in folder `server`. Framework chosen for backend: nestjs.
+The package has been structured moving the original files for frontend in folder `/client` , and set the backend in folder `/server`. Framework chosen for backend: nestjs.
 
-### Environment node version : 12
+## Requirements
 
-Nodejs is a requisite to run the package. Please download it from [here](https://nodejs.org/it/download/)
+ [docker](https://www.docker.com)
 
-To set nodejs version to v12 , run the command `nvm install 12` if not already installed or `nvm use 12` if installed.
+### Run it
 
-### Install
+`sudo docker-compose --file docker-compose.yml up`
 
-To get started , in the root folder execute
-
-`npm i`
-
-then
-
-`npm start`
-
-The `client` and `server` will be started together.
-
-### Conclusions
+## Conclusions
 
 The backend has been designed to interact with MongoDB database on MongoDB Atlas.
 It has one database, containing two collections with the following characteristics:
