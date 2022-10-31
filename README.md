@@ -8,6 +8,8 @@ The package has been structured moving the original files for frontend in folder
 
 ### Run it
 
+In root of the package run
+
 `sudo docker-compose --file docker-compose.yml up`
 
 ## Conclusions
