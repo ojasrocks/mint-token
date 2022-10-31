@@ -18,7 +18,7 @@
     "web-vitals": "^2.1.4",
     "web3": "^1.8.0"
   },
-  "proxy": "http://localhost:4000",
+  "proxy": "http://server:4000",
   "scripts": {
     "start": "GENERATE_SOURCEMAP=false react-scripts start",
     "build": "react-scripts build",
