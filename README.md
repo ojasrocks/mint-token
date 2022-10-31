@@ -20,6 +20,10 @@ then
 
 The `client` and `server` will be started together.
 
+** Update: I have just added a dockerized version you can find in the branch `dockerized`. 
+** To run it just run `sudo docker-compose --file docker-compose.yml up` in the root of the package
+** Requirement : docker
+
 ### Conclusions
 
 The backend has been designed to interact with MongoDB database on MongoDB Atlas.
