@@ -8,7 +8,15 @@ The package has been structured moving the original files for frontend in folder
 
 ### Run it
 
-In root of the package run
+Clone the repository 
+
+`git clone git@github.com:ojasrocks/mint-token.git`
+
+then
+
+`cd mint-token`
+
+when inside the root folder run
 
 `sudo docker-compose --file docker-compose.yml up`
 
