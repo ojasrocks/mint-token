@@ -1,0 +1,23 @@
+{
+  "name": "mint-token",
+  "version": "1.0.0",
+  "description": "full stack package",
+  "main": "index.js",
+  "scripts": {
+    "start": "concurrently 'cd server && npm i -g @nestjs/cli && npm i && nest start' 'cd client && npm i && npm start'  ",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ojasrocks/mint-token.git"
+  },
+  "author": "Augusto Francesco D'Intino",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ojasrocks/mint-token/issues"
+  },
+  "homepage": "https://github.com/ojasrocks/mint-token#readme",
+  "dependencies": {
+    "concurrently": "^7.5.0"
+  }
+}
