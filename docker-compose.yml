@@ -1,0 +1,30 @@
+version: "3"
+services:
+  #############
+  ## SERVER ##
+  server:
+    build:
+      context: ./server
+      dockerfile: Dockerfile
+    networks:
+      - webapp
+    restart: always
+    command: ["nest", "start"]
+    container_name: server
+  #############
+  ## CLIENT ##
+  client:
+    build:
+      context: ./client
+      dockerfile: Dockerfile
+    networks:
+      - webapp
+    ports:
+      - 3000:3000
+    restart: always
+    command: ["npm", "start"]
+    container_name: client
+
+networks:
+  webapp:
+    driver: bridge
